@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente: MyString
+  valor: 1.5
+  data: 2016-10-06
+
+two:
+  cliente: MyString
+  valor: 1.5
+  data: 2016-10-06

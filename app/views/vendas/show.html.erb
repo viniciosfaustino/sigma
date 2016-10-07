@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @venda.cliente %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @venda.valor %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @venda.data %>
+</p>
+
+<% if @venda.produtos.size > 0 %>
+  <h3>produtos</h3>    
+  <% for produto in @venda.produtos %>
+    <%= produto.nome%>
+    <%= produto.quantidade%>
+    <%= produto.preco%>
+  <% end %>
+<% end %>
+
+<h2>Cadastrar Produtos</h2>
+<%= form_for [@venda, Produto.new] do |f|%>
+  <%= f.label :nome%> <%= f.text_field :nome %>
+  <%= f.label :quantidade%> <%= f.number_field :quantidade %>
+  <%= f.label :preco%> <%= f.number_field :preco %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_venda_path(@venda) %> |
+<%= link_to 'Back', vendas_path %>
